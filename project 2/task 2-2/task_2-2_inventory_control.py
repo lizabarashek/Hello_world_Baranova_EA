@@ -1,10 +1,15 @@
-reagent_name = input("Введите название реактива: ")
-reagent_quantity = int(input("Введите количество реактива (шт.): "))
+# Запрос названия реактива 
+reactant_name = input("Введите название нового реактива: ")
 
-report = f"Реактив {reagent_name} поступил на склад в количестве {reagent_quantity} шт."
-print(report)
+# Запрос количества реактива
+reactant_quantity = int(input("Введите количество реактива (целое число): "))
 
-with open("inventory.txt", "w", encoding="utf-8") as file:
-    file.write(report)
+# Вывод отчета
+print(f"Реактив {reactant_name} поступил на склад в количестве {reactant_quantity} шт.")
+
+# запись отчета в файл
+file = open("inventory.txt", "w", encoding="utf-8")
+file.write(f"Реактив {reactant_name} поступил на склад в количестве {reactant_quantity} шт.")
+file.close()
 
 print("Отчет также сохранен в файл inventory.txt")
